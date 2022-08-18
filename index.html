@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="images/check-list.png" title="tick icons">
+    <link rel="stylesheet" href="list.css">
+    <title>To-Do List</title>
+</head>
+<body>
+    <div class="header-container">
+        <!-- <img class="header-image" src="check-list.png" alt="image by Ehtisham Abid"> -->
+        <h1>To-Do List</h1>
+    </div>
+    <div id="main-container">
+        <form action="">
+            <div class="input-container">
+                <input id="task-input" type="text" placeholder="Enter your task...">
+                <input type="submit" id="btn" value="Add">
+            </div>
+        </form>
+        <div id="delete-btn-container">
+            <input id="delete-btn" type="button" value="Clear all tasks">
+        </div>
+        <div id="task-lists">
+            <ul id="task-container"></ul>
+        </div>
+    </div>
+
+    <!-- edit pop up box -->
+    <div id="edit-pop-up-box">
+        <div id="edit-pop-up-content">
+            <div id="question">Update your task</div>
+            <div id="task-list">
+                <input type="text">
+            </div>
+            <div id="options">
+                <span id="cancel">Cancel</span>
+                <span id="update">Update</span>
+            </div>
+        </div>
+    </div>
+    <!-- delete pop up box -->
+    <div id="delete-pop-up-box">
+        <div id="delete-pop-up-content">
+            <div id="question">Delete your task
+            </div>
+            <div id="task-list">
+                <p>Are you sure you want to delete your task?</p>
+            </div>
+            <div id="options">
+                <span id="no" onclick="displayNone()">No</span>
+                <span id="yes" onclick="deleteYes()">Yes</span>
+            </div>
+        </div>
+    </div>
+    <script src="list.js"></script>
+</body>
+</html>
