@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato&family=Poppins:wght@300&family=Roboto&family=Source+Sans+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Poppins:wght@300&family=Roboto&family=Rubik+Burned&family=Source+Sans+Pro&display=swap');
 * {
     box-sizing: border-box;
 }
@@ -9,16 +9,22 @@ body {
 /* header element */
 .header-container {
     height: 15vh;
+    background-color: rgba(58, 118, 201, .9);
+    box-shadow: 1px 2px 4px 1px rgba(0, 0, 0, 0.5);
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    border-bottom: 1px solid black;
     user-select: none;
 }
 .header-image {
     height: 3.5em;
     padding-right: 10px;
+}
+.header-text {
+    font-size: 2.5em;
+    font-family: 'Rubik Burned', cursive;
+    color: whitesmoke;
 }
 /* main content */
 #main-container {
@@ -64,9 +70,11 @@ body {
 }
 #delete-btn-container {
     margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
 }
 #delete-btn {
-    width: 100%;
+    width: 49%;
     height: 45px;
     background-color: rgba(191, 191, 191, .2);
     border: none;
@@ -84,6 +92,21 @@ body {
     background-color: rgba(191, 191, 191, .7);
     color: rgba(28, 27, 27, 0.5);
 }
+#checked-delete-btn {
+    width: 49%;
+    height: 45px;
+    background-color: rgba(191, 191, 191, .2);
+    border: none;
+    border-radius: 5px 5px 5px 5px;
+    font-size: 1em;
+    font-weight: 600;
+    font-family: "Roboto" ,sans-serif;
+    color: rgba(28, 27, 27, 0.3);
+}
+#checked-delete-btn:hover {
+    background-color: rgba(191, 191, 191, .5);
+    cursor: pointer;
+}
 #task-container {
     margin-top: 30px;
     padding: 0;
@@ -91,15 +114,15 @@ body {
     border-radius: 5px;
 }
 .task-items {
+    position: relative;
     padding: 20px;
     height: 60px;
     background-color: rgba(191, 191, 191, .2);
     font-family: 'Source Sans Pro', sans-serif;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
     align-items: center;
-    cursor: pointer;
 }
 .task-items:only-of-type, .task-items:last-of-type {
     border: none;
@@ -107,18 +130,49 @@ body {
 .task-items:nth-child(even) {
     background-color: rgba(191, 191, 191, .5);
 }
-.task-items:checked {
-    text-decoration: line-through;
-}
 .close {
     cursor: pointer;
     font-size: 1.5em;
     font-weight: bold;
     color: rgba(0, 0, 0, .5);
+    position: absolute;
+    right: 20px;
 }
 .close:hover {
     color: rgba(0, 0, 0, .8);
 }
+#checkbox {
+    margin-right: 0.7em;
+}
+#checkbox:checked ~ .task-items {
+    background-color: rgba(191, 191, 191, 1);
+}
+#no-task-container {
+    display: none;
+    height: 15vh;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 50px;
+    background-color: rgba(191, 191, 191, .5);
+    border-radius: 5px;
+    box-shadow: 1px 2px 4px 1px rgba(0, 0, 0, 0.5);
+}
+#task-img {
+    height: 10vh;
+    margin-left: 50px;
+}
+#no-task {
+    margin-left: 20px;
+    font-size: 1.3em;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+}
+#no-task span {
+    font-size: .9em;
+    font-weight: normal;
+}
+
 /* edit-pop-up-box */
 #edit-pop-up-box {
     display: none;
@@ -212,7 +266,34 @@ body {
 }
 
 @media screen and (max-width: 750px) {
+    .header-container {
+        height: 12vh
+    }
+    .header-text {
+        font-size: 2em;
+    }
     #main-container {
         width: 70%;
+    }
+    #no-task-container {
+        justify-content: center;
+    }
+    #task-img {
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .header-container {
+        height: 8vh;
+    }
+    .header-text {
+        font-size: 1.5em;
+    }
+    #main-container {
+        width: 90%;
+    }
+    #btn {
+        background-color: rgba(10, 247, 101, .9);
     }
 }

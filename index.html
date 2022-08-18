@@ -11,7 +11,7 @@
 <body>
     <div class="header-container">
         <!-- <img class="header-image" src="check-list.png" alt="image by Ehtisham Abid"> -->
-        <h1>To-Do List</h1>
+        <h1 class="header-text">To-Do List</h1>
     </div>
     <div id="main-container">
         <form action="">
@@ -22,9 +22,16 @@
         </form>
         <div id="delete-btn-container">
             <input id="delete-btn" type="button" value="Clear all tasks">
+            <input id="checked-delete-btn" type="button" value="Clear all checked tasks">
         </div>
         <div id="task-lists">
             <ul id="task-container"></ul>
+        </div>
+        <div id="no-task-container">
+            <img id="task-img" src="images/empty-box.png" alt="">
+            <p id="no-task">You don't have any tasks! <br>
+                <span>Enter your task above</span>
+            </p>
         </div>
     </div>
 
