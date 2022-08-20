@@ -1,6 +1,6 @@
 let taskList = [];
-let noTask = document.getElementById("no-task-container");
 taskList = JSON.parse(localStorage.getItem("tasks"))
+let noTask = document.getElementById("no-task-container");
 if(taskList == undefined) {
     taskList = [];
     let listContainer = document.getElementById("task-container");
@@ -54,8 +54,8 @@ let deleteButton = document.getElementsByClassName("close");
 for(let i = 0; i < deleteButton.length; i++) {
     deleteButton[i].onclick = function() {
         const popUpBox = document.getElementById("delete-pop-up-box");
-        popUpIndex = i;
         popUpBox.style.display = "flex";
+        popUpIndex = i;
     }
 }
 
@@ -65,8 +65,6 @@ function displayNone() {
 }
 
 function deleteYes() {
-    let div = document.getElementsByClassName("task-items");
-    div.innerHTML;
     const list = [];
     for(let i = 0;i < taskList.length; i++) {
         if(i !== popUpIndex) {
@@ -82,3 +80,14 @@ clearAllButton.addEventListener("click", function() {
     localStorage.clear()
     location.reload()
 });
+
+function clearChecked() {
+    let indexNo;
+    let checkbox = document.getElementById("checkbox");
+    for(let i = 0; i < checkbox.length; i++) {
+        checkbox[i].onclick = function() {
+            indexNo = i;
+            console.log(indexNo);
+        }
+    }
+}
