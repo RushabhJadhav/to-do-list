@@ -22,7 +22,7 @@
         </form>
         <div id="delete-btn-container">
             <input id="delete-btn" type="button" value="Clear all tasks">
-            <input id="checked-delete-btn" type="button" value="Clear all checked tasks">
+            <input id="checked-delete-btn" type="button" value="Clear checked tasks" onclick="clearChecked()">
         </div>
         <div id="task-lists">
             <ul id="task-container"></ul>
@@ -61,6 +61,9 @@
                 <span id="yes" onclick="deleteYes()">Yes</span>
             </div>
         </div>
+    </div>
+    <div id="credit-container">
+        <p id="credit-text">&#169; Rushabh Jadhav</p>
     </div>
     <script src="list.js"></script>
 </body>
