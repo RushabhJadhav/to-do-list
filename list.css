@@ -144,12 +144,9 @@ body {
 .close:hover {
     color: rgba(0, 0, 0, .8);
 }
-#checkbox {
+.tick {
     margin-right: 0.7em;
     margin-top: 0.4em;
-}
-#checkbox:checked ~ .task-items {
-    background-color: rgba(191, 191, 191, 1);
 }
 #no-task-container {
     display: none;
@@ -194,6 +191,18 @@ body {
     border-radius: 10px;
     display: grid;
     grid-template-rows: 25% 50% 25%;
+}
+.edit {
+    position: absolute;
+    right: 45px;
+    top: 23px;
+    cursor: pointer;
+    color: rgba(0, 0, 0, .5);
+    font-weight: bold;
+    transform: rotate(180deg);
+}
+.edit:hover {
+    color: rgba(0, 0, 0, .8);
 }
 #question {
     margin: auto;
@@ -251,6 +260,8 @@ body {
     font-size: 1em;
     font-family: sans-serif;
     user-select: none;
+    text-align: center;
+    padding: 0 5px;
 }
 #no, #yes {
     font-family: 'Trebuchet MS', sans-serif;
@@ -292,6 +303,9 @@ body {
     #task-img {
         margin-left: 0;
     }
+    #delete-pop-up-content {
+        width: 50%;
+    }
 }
 
 @media screen and (max-width: 500px) {
@@ -316,5 +330,8 @@ body {
     }
     #no-task {
         font-size: 1em;
+    }
+    #delete-pop-up-content {
+        width: 80%;
     }
 }
