@@ -37,13 +37,14 @@ button.onclick = function() {
 let closeButton = document.getElementsByTagName("li");
 for(let i = 0; i < closeButton.length; i++) {
     let span = document.createElement("span");
+    let span2 = document.createElement("span");
     let txt = document.createTextNode("\u00D7");
     let input = document.createElement("input");
     input.setAttribute("type", "checkbox");
-    input.id = "checkbox";
+    input.className = "tick";
     span.className = "close";
+    span2.className = "edit";
     span.appendChild(txt);
-    span.id = "span-" + i;
     closeButton[i].appendChild(span);
     closeButton[i].appendChild(input);
 }
@@ -81,13 +82,22 @@ clearAllButton.addEventListener("click", function() {
     location.reload()
 });
 
+let indexOfTick = [];
+let checkbox = document.getElementsByClassName("tick");
+for(let i = 0; i < checkbox.length; i++) {
+    checkbox[i].onclick = function() {
+        indexOfTick.push(i)
+        console.log(indexOfTick);
+    }
+}
+
 function clearChecked() {
-    let indexNo;
-    let checkbox = document.getElementById("checkbox");
-    for(let i = 0; i < checkbox.length; i++) {
-        checkbox[i].onclick = function() {
-            indexNo = i;
-            console.log(indexNo);
+    const list = [];
+    for(let i = 0; i < taskList.length; i++) {
+        if(indexOfTick.includes(i) === false) {
+            list.push(taskList[i])
         }
     }
+    localStorage.setItem("tasks", JSON.stringify(list));
+    location.reload();
 }
